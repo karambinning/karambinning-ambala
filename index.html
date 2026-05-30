@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ambala — Mithai · Sweets · Savouries — Bradford BD7</title>
+<meta name="description" content="Ambala on Great Horton Road, Bradford. Indian mithai, family sharing boxes, wedding orders and Diwali tins. 205 Great Horton Road, BD7 1RP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,900&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAEFD9;          /* ghee / mithai-tray cream */
+    --paper-warm:#F4E4C1;     /* warmer cream for slabs */
+    --ink:#1F1410;            /* jaggery / dark roast */
+    --ink-soft:#3A2A22;
+    --kumkum:#B5341E;         /* celebratory red */
+    --saffron:#E8B23A;        /* saffron gold */
+    --pista:#5E6E37;          /* pistachio shell */
+    --pista-soft:#7C8B4F;
+    --rule:#1F141022;
+    --display:'Fraunces', 'Times New Roman', serif;
+    --body:'Inter Tight', system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:clamp(15px,.9rem + .25vw,17px);
+    line-height:1.55;
+    text-wrap:pretty;
+    hyphens:auto;
+    /* paper grain */
+    background-image:
+      radial-gradient(#1F141008 1px, transparent 1px),
+      radial-gradient(#B5341E0a 1px, transparent 1px);
+    background-size:3px 3px, 7px 7px;
+    background-position:0 0, 1px 2px;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;letter-spacing:-0.015em;margin:0}
+  a{color:inherit}
+  a.cta{color:var(--paper);background:var(--ink);text-decoration:none;padding:.7em 1.1em;border-radius:0;font-weight:500;letter-spacing:.02em;display:inline-block;transition:background .25s}
+  a.cta:hover{background:var(--kumkum)}
+  a.cta.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
+  a.cta.ghost:hover{background:var(--ink);color:var(--paper)}
+
+  /* === Top bar === */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.2rem clamp(1rem,4vw,3rem);
+    font-family:var(--display);
+    font-feature-settings:"ss01";
+    font-size:.95rem;
+  }
+  .topbar .mark{font-weight:900;font-variation-settings:"opsz" 18, "SOFT" 0;letter-spacing:.02em;font-size:1.2rem}
+  .topbar nav{display:none;gap:1.8rem;font-family:var(--body);font-size:.85rem;text-transform:uppercase;letter-spacing:.14em}
+  .topbar nav a{text-decoration:none;padding-bottom:.15rem;border-bottom:1px solid transparent;transition:border-color .25s}
+  .topbar nav a:hover{border-bottom-color:var(--ink)}
+  .topbar .badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--body);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .topbar .badge::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--kumkum);box-shadow:0 0 0 3px var(--kumkum)22}
+  @media (min-width:880px){
+    .topbar nav{display:flex}
+  }
+
+  /* === Masthead === */
+  .masthead{
+    padding:clamp(1.5rem,5vw,5rem) clamp(1rem,4vw,3rem) clamp(2rem,6vw,5rem);
+    display:grid;
+    grid-template-columns:1fr;
+    gap:2rem;
+    align-items:end;
+    border-bottom:1px solid var(--rule);
+  }
+  @media (min-width:880px){
+    .masthead{grid-template-columns:1.4fr .9fr;gap:3rem}
+  }
+  .masthead h1{
+    font-family:var(--display);
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-weight:600;
+    font-size:clamp(4.2rem, 16vw, 13rem);
+    line-height:.83;
+    letter-spacing:-0.045em;
+    margin:0;
+  }
+  .masthead h1 .amp{
+    font-style:italic;font-weight:400;color:var(--kumkum);
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+  }
+  .masthead .sub{
+    font-family:var(--display);font-style:italic;font-weight:400;
+    font-variation-settings:"opsz" 14, "SOFT" 70;
+    font-size:clamp(1.15rem,1rem + .8vw,1.6rem);
+    line-height:1.25;
+    color:var(--ink-soft);
+    margin-top:1rem;
+    max-width:38ch;
+  }
+  .masthead .caption{
+    font-family:var(--body);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);
+    margin-bottom:.6rem;
+  }
+  .masthead .addr{
+    font-family:var(--display);
+    font-size:clamp(1.05rem,1rem + .5vw,1.4rem);
+    font-weight:600;
+    font-variation-settings:"opsz" 36;
+    line-height:1.25;
+    margin-top:1.8rem;
+  }
+  .masthead .addr small{display:block;font-family:var(--body);font-weight:400;font-size:.85rem;letter-spacing:.02em;color:var(--ink-soft);margin-top:.3rem}
+  .masthead .actions{display:flex;gap:.7rem;margin-top:1.6rem;flex-wrap:wrap}
+
+  /* === Marquee === */
+  .marquee{
+    overflow:hidden;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:1.4rem 0;
+    background:var(--paper);
+    --speed:42s;
+  }
+  .marquee__track{
+    display:inline-flex;
+    gap:3rem;
+    white-space:nowrap;
+    animation:scroll var(--speed) linear infinite;
+    font-family:var(--display);
+    font-variation-settings:"opsz" 96, "SOFT" 20;
+    font-weight:600;
+    font-size:clamp(2rem,4vw + 1rem,3.6rem);
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    will-change:transform;
+  }
+  .marquee__track span{display:inline-flex;align-items:center;gap:3rem}
+  .marquee__track .dot{color:var(--kumkum);font-weight:900;font-style:italic;font-variation-settings:"opsz" 8;font-size:.7em;position:relative;top:-.18em}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){
+    .marquee__track{animation:none}
+  }
+
+  /* === Section frame === */
+  section.slab{padding:clamp(3rem,7vw,6rem) clamp(1rem,4vw,3rem)}
+  .eyebrow{
+    font-family:var(--body);
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    color:var(--kumkum);
+    margin-bottom:1.2rem;
+    display:flex;align-items:center;gap:.8rem;
+  }
+  .eyebrow::before{content:"";display:inline-block;width:2rem;height:1px;background:var(--kumkum)}
+
+  /* === Counter (menu) === */
+  .counter{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.8rem;
+    border-top:1px solid var(--rule);
+  }
+  @media (min-width:780px){
+    .counter{grid-template-columns:.4fr 1fr;gap:3rem}
+  }
+  .counter h2{
+    font-size:clamp(2.4rem,5vw + 1rem,4.5rem);
+    font-variation-settings:"opsz" 144,"SOFT" 40;
+    line-height:.95;
+    margin-bottom:.5rem;
+  }
+  .counter .lede{
+    max-width:46ch;
+    font-family:var(--display);
+    font-style:italic;
+    font-variation-settings:"opsz" 14,"SOFT" 80;
+    font-size:clamp(1.15rem,1rem + .6vw,1.45rem);
+    line-height:1.4;
+    color:var(--ink-soft);
+  }
+  .menu{display:grid;gap:2.4rem}
+  .menu-group{}
+  .menu-group h3{
+    font-size:clamp(1.4rem,1rem + 1.4vw,2rem);
+    font-variation-settings:"opsz" 36,"SOFT" 30;
+    font-weight:600;
+    font-style:italic;
+    color:var(--kumkum);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:.4rem;
+    margin-bottom:1rem;
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  }
+  .menu-group h3 .num{
+    font-style:normal;
+    font-family:var(--body);
+    font-size:.7rem;letter-spacing:.2em;
+    color:var(--ink-soft);
+    font-weight:400;
+  }
+  .menu-list{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+  .menu-list li{
+    display:flex;align-items:baseline;gap:.5rem;
+    font-family:var(--display);
+    font-variation-settings:"opsz" 18;
+    font-size:clamp(1.05rem,.9rem + .4vw,1.2rem);
+    font-weight:400;
+  }
+  .menu-list li .name{flex:0 0 auto;font-weight:600}
+  .menu-list li .note{flex:1;color:var(--ink-soft);font-style:italic;font-size:.92em;font-weight:400;padding:0 .5rem}
+  .menu-list li .leader{
+    flex:1;
+    border-bottom:1px dotted var(--ink-soft);
+    transform:translateY(-.25em);
+    min-width:1.5rem;
+    opacity:.55;
+  }
+  .menu-list li .qty{flex:0 0 auto;font-family:var(--body);font-size:.85em;letter-spacing:.02em;color:var(--ink-soft)}
+
+  /* === Pistachio slab (wedding/catering) === */
+  .pista-slab{
+    background:var(--pista);
+    color:#F5EFDA;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    position:relative;
+    overflow:hidden;
+  }
+  .pista-slab::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(circle at 80% 30%, #E8B23A22, transparent 55%);
+  }
+  .pista-slab .eyebrow{color:var(--saffron)}
+  .pista-slab .eyebrow::before{background:var(--saffron)}
+  .pista-grid{
+    display:grid;grid-template-columns:1fr;gap:2.5rem;position:relative;z-index:1;
+  }
+  @media (min-width:880px){.pista-grid{grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center}}
+  .pista-slab h2{
+    font-size:clamp(2.6rem,5vw + 1rem,5rem);
+    color:#FAEFD9;
+    font-variation-settings:"opsz" 144,"SOFT" 80;
+    line-height:.95;
+  }
+  .pista-slab h2 em{font-style:italic;color:var(--saffron);font-weight:400;font-variation-settings:"opsz" 144,"SOFT" 100}
+  .pista-slab p{font-family:var(--display);font-variation-settings:"opsz" 14,"SOFT" 60;font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.5;max-width:42ch;color:#F5EFDA;font-style:italic;font-weight:400}
+  .pista-slab .card{
+    border:1px solid #F5EFDA66;
+    padding:1.8rem;
+    background:#1F1410cc;
+    backdrop-filter:none;
+  }
+  .pista-slab .card h4{font-family:var(--body);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--saffron);margin:0 0 .8rem}
+  .pista-slab .card ul{list-style:none;padding:0;margin:0;display:grid;gap:.7rem;font-family:var(--display);font-size:1.1rem;font-variation-settings:"opsz" 18}
+  .pista-slab .card ul li{display:flex;align-items:baseline;gap:.6rem}
+  .pista-slab .card ul li::before{content:"·";color:var(--saffron);font-size:1.4em;font-weight:900;line-height:1}
+
+  /* === Calendar / season strip === */
+  .season{
+    background:var(--ink);
+    color:var(--paper);
+    padding:clamp(2.5rem,5vw,4rem) clamp(1rem,4vw,3rem);
+  }
+  .season-grid{
+    display:grid;grid-template-columns:1fr;gap:2rem;
+  }
+  @media (min-width:780px){.season-grid{grid-template-columns:repeat(3,1fr);gap:3rem}}
+  .season-card{}
+  .season-card h3{
+    font-family:var(--display);font-style:italic;
+    font-size:clamp(1.5rem,1rem + 1.5vw,2.2rem);
+    color:var(--saffron);
+    font-variation-settings:"opsz" 96,"SOFT" 100;
+    font-weight:400;
+    margin-bottom:.8rem;
+  }
+  .season-card p{color:#FAEFD9cc;max-width:32ch;font-size:.95rem;line-height:1.55}
+  .season-card .num{
+    font-family:var(--display);
+    font-size:.8rem;letter-spacing:.2em;color:var(--kumkum);
+    text-transform:uppercase;
+    margin-bottom:.6rem;
+    display:block;
+    font-variation-settings:"opsz" 8;
+  }
+
+  /* === Visit slab === */
+  .visit{
+    padding:clamp(3.5rem,8vw,7rem) clamp(1rem,4vw,3rem);
+    display:grid;grid-template-columns:1fr;gap:3rem;border-top:1px solid var(--rule);
+  }
+  @media (min-width:880px){.visit{grid-template-columns:1.1fr .9fr;gap:5rem}}
+  .visit h2{
+    font-size:clamp(3rem,7vw + 1rem,7rem);
+    font-variation-settings:"opsz" 144,"SOFT" 50;
+    line-height:.9;
+  }
+  .visit h2 em{font-style:italic;color:var(--kumkum);font-weight:400;font-variation-settings:"opsz" 144,"SOFT" 100}
+  .visit .where{
+    border-left:2px solid var(--kumkum);
+    padding-left:1.4rem;
+  }
+  .visit .where dt{
+    font-family:var(--body);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:1.4rem;
+  }
+  .visit .where dt:first-child{margin-top:0}
+  .visit .where dd{
+    margin:.3rem 0 0;
+    font-family:var(--display);
+    font-size:clamp(1.2rem,1rem + .8vw,1.6rem);
+    font-variation-settings:"opsz" 36;
+    font-weight:600;
+    line-height:1.3;
+  }
+  .visit .where dd small{font-family:var(--body);font-weight:400;font-size:.9rem;color:var(--ink-soft);display:block;margin-top:.3rem;letter-spacing:.01em;font-style:italic}
+  .visit .actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.6rem}
+
+  /* === Footer === */
+  footer{
+    background:var(--paper-warm);
+    border-top:2px solid var(--ink);
+    padding:clamp(3rem,6vw,5rem) clamp(1rem,4vw,3rem) 2rem;
+    display:grid;grid-template-columns:1fr;gap:2rem;
+  }
+  @media (min-width:780px){footer{grid-template-columns:2fr 1fr 1fr;gap:3rem}}
+  footer h4{
+    font-family:var(--display);
+    font-variation-settings:"opsz" 144,"SOFT" 30;
+    font-weight:900;
+    font-size:clamp(3rem,6vw + 1rem,5.5rem);
+    line-height:.9;
+    letter-spacing:-0.04em;
+    margin:0 0 .5rem;
+  }
+  footer .stamp{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-family:var(--body);
+    font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);
+    border:1px solid var(--ink);padding:.5em 1em;border-radius:999px;
+  }
+  footer .stamp::before{content:"";width:.45rem;height:.45rem;background:var(--kumkum);border-radius:50%}
+  footer h5{
+    font-family:var(--body);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
+    margin:0 0 .8rem;font-weight:600;
+  }
+  footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-family:var(--display);font-size:1.05rem;font-weight:600;font-variation-settings:"opsz" 18}
+  footer ul a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .25s}
+  footer ul a:hover{border-bottom-color:var(--ink)}
+  footer .meta{font-family:var(--body);font-size:.78rem;color:var(--ink-soft);letter-spacing:.05em;margin-top:.5rem;font-style:italic}
+  footer .colophon{
+    grid-column:1/-1;border-top:1px solid var(--rule);padding-top:1.2rem;margin-top:1rem;
+    font-family:var(--body);font-size:.75rem;letter-spacing:.06em;color:var(--ink-soft);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;
+  }
+
+  /* === Scroll-driven reveal === */
+  @supports (animation-timeline: view()) {
+    .reveal{
+      animation:rise both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 22%;
+    }
+    @keyframes rise{
+      from{opacity:0;transform:translateY(2.5rem)}
+      to{opacity:1;transform:translateY(0)}
+    }
+  }
+
+  ::selection{background:var(--kumkum);color:var(--paper)}
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <div class="mark">Ambala<span style="color:var(--kumkum);font-style:italic;font-weight:400"> · </span><span style="font-weight:400;font-style:italic">Bradford</span></div>
+  <nav aria-label="primary">
+    <a href="#counter">The Counter</a>
+    <a href="#celebrate">Celebrations</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <span class="badge">Great Horton Rd · BD7</span>
+</header>
+
+<!-- ============ MASTHEAD ============ -->
+<section class="masthead">
+  <div>
+    <h1>
+      Mithai,<br>
+      cut by hand<br>
+      <span class="amp">&amp; sold</span><br>
+      by the box.
+    </h1>
+    <p class="sub">A Bradford counter for Indian sweets, savouries and the kind of tin you take to weddings.</p>
+  </div>
+  <div>
+    <div class="caption">— Find us —</div>
+    <div class="addr">
+      205 Great Horton Road<br>
+      Bradford&nbsp;·&nbsp;BD7&nbsp;1RP
+      <small>Closest stop: Great Horton Road / Sedgefield Terrace. Free street parking nearby.</small>
+    </div>
+    <div class="actions">
+      <a href="#counter" class="cta">See the counter</a>
+      <a href="#celebrate" class="cta ghost">Wedding orders</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Mixed Mithai Tin <em class="dot">●</em> Family Sharing Box <em class="dot">●</em> Wedding orders welcomed <em class="dot">●</em> Diwali tins, in season <em class="dot">●</em> Cut fresh, sold by weight <em class="dot">●</em></span>
+    <span aria-hidden="true">Mixed Mithai Tin <em class="dot">●</em> Family Sharing Box <em class="dot">●</em> Wedding orders welcomed <em class="dot">●</em> Diwali tins, in season <em class="dot">●</em> Cut fresh, sold by weight <em class="dot">●</em></span>
+  </div>
+</section>
+
+<!-- ============ COUNTER ============ -->
+<section id="counter" class="slab">
+  <div class="counter">
+    <div class="reveal">
+      <div class="eyebrow">The Counter</div>
+      <h2>What's set out today.</h2>
+      <p class="lede">A working list — the trays change with the season, and what we're known for changes with the day. Pop in to see what's just been laid out, or call ahead for a tin packed to size.</p>
+    </div>
+    <div class="menu">
+
+      <div class="menu-group reveal">
+        <h3><span>Mithai &mdash; Indian sweets</span><span class="num">01 / Counter</span></h3>
+        <ul class="menu-list">
+          <li><span class="name">Barfi</span><span class="note">milk fudge — pista, kesar, chocolate</span><span class="leader"></span><span class="qty">by weight</span></li>
+          <li><span class="name">Ladoo</span><span class="note">besan, motichoor, coconut</span><span class="leader"></span><span class="qty">by the dozen</span></li>
+          <li><span class="name">Halwa</span><span class="note">carrot, semolina, in season</span><span class="leader"></span><span class="qty">by weight</span></li>
+          <li><span class="name">Rasmalai &amp; Ras</span><span class="note">milk-soaked, cardamom &amp; saffron</span><span class="leader"></span><span class="qty">by tray</span></li>
+          <li><span class="name">Jalebi</span><span class="note">fried, syruped, sold warm</span><span class="leader"></span><span class="qty">by weight</span></li>
+          <li><span class="name">Kaju Katli</span><span class="note">cashew, leaf-set, gift-trayed</span><span class="leader"></span><span class="qty">by weight</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-group reveal">
+        <h3><span>Savouries &amp; Snacks</span><span class="num">02 / Counter</span></h3>
+        <ul class="menu-list">
+          <li><span class="name">Samosa</span><span class="note">vegetable, meat, freshly fried</span><span class="leader"></span><span class="qty">each / by dozen</span></li>
+          <li><span class="name">Pakora &amp; Bhajia</span><span class="note">onion, mix-veg, spinach</span><span class="leader"></span><span class="qty">by weight</span></li>
+          <li><span class="name">Chevda &amp; Mixture</span><span class="note">house-made Bombay mix</span><span class="leader"></span><span class="qty">by weight / tin</span></li>
+          <li><span class="name">Kebab &amp; Tikki</span><span class="note">platter for celebrations</span><span class="leader"></span><span class="qty">by tray</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-group reveal">
+        <h3><span>By the box</span><span class="num">03 / Take-away</span></h3>
+        <ul class="menu-list">
+          <li><span class="name">Mixed Mithai Tin</span><span class="note">our signature — assorted sweets, gift-wrapped</span><span class="leader"></span><span class="qty">half / full / large</span></li>
+          <li><span class="name">Family Sharing Box</span><span class="note">a Sunday-night, after-Iftar, post-mandir kind of box</span><span class="leader"></span><span class="qty">three sizes</span></li>
+          <li><span class="name">Diwali Tin</span><span class="note">printed lid, seasonal selection</span><span class="leader"></span><span class="qty">limited season</span></li>
+          <li><span class="name">Eid &amp; Holi specials</span><span class="note">ask in store, made to order</span><span class="leader"></span><span class="qty">by request</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PISTACHIO SLAB — celebrations ============ -->
+<section id="celebrate" class="slab pista-slab">
+  <div class="pista-grid">
+    <div class="reveal">
+      <div class="eyebrow">Weddings &amp; Catering</div>
+      <h2>The tin <em>at the door</em>, the tray <em>on the table.</em></h2>
+      <p>If you've ever been handed a small box of mithai at a Bradford wedding, you know the brief. We pack to size, label by guest count, and deliver in time for the welcome. Sweet trays, savoury platters, full mithai tables — built around your day, not a fixed menu.</p>
+    </div>
+    <div class="card reveal">
+      <h4>What we cater</h4>
+      <ul>
+        <li>Wedding mithai trays &amp; guest gift boxes</li>
+        <li>Mehndi night savoury platters</li>
+        <li>Engagement &amp; reception mithai tables</li>
+        <li>Eid, Diwali &amp; corporate gifting (printed tins)</li>
+        <li>Funeral &amp; memorial trays — same-day where we can</li>
+      </ul>
+      <p style="font-family:var(--body);font-size:.85rem;letter-spacing:.04em;margin-top:1.4rem;color:#FAEFD9aa;font-style:normal">Pop in to the BD7 counter to discuss numbers, timings &amp; collection. We don't quote sight-unseen — every order is built to the day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEASON STRIP ============ -->
+<section class="season">
+  <div class="season-grid">
+    <div class="season-card reveal">
+      <span class="num">01 / Year-round</span>
+      <h3>The everyday counter.</h3>
+      <p>Mithai laid out fresh each day. Sold by weight, by the box, or wrapped up to take to a relative who is "just dropping in".</p>
+    </div>
+    <div class="season-card reveal">
+      <span class="num">02 / Autumn → Diwali</span>
+      <h3>Tin season.</h3>
+      <p>Printed Diwali tins begin shipping mid-autumn. Pre-order in store for collection; large orders please give a week.</p>
+    </div>
+    <div class="season-card reveal">
+      <span class="num">03 / Spring → Wedding</span>
+      <h3>Tray season.</h3>
+      <p>Mehndi nights, walima receptions, anniversary mandaps — we pack the small things so the day can be big.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section id="visit" class="visit">
+  <div class="reveal">
+    <h2>Pop in, <em>have a look</em>, leave with a tin.</h2>
+    <p style="font-family:var(--display);font-style:italic;font-variation-settings:'opsz' 14,'SOFT' 70;font-size:clamp(1.1rem,1rem + .5vw,1.4rem);line-height:1.4;color:var(--ink-soft);max-width:38ch;margin-top:1.4rem">The counter is the best way to choose — pick by the eye, taste a corner, leave with what you came for. Walk-ins always welcome.</p>
+  </div>
+  <div class="reveal">
+    <dl class="where">
+      <dt>Address</dt>
+      <dd>205 Great Horton Road<br>Bradford&nbsp;BD7&nbsp;1RP<small>West Yorkshire, England</small></dd>
+      <dt>What three words</dt>
+      <dd style="font-style:italic;font-weight:400">just opposite the takeaway parade, look for the painted shopfront.<small>If you reach Listerhills, you've gone too far.</small></dd>
+      <dt>Phone</dt>
+      <dd>Number on the shopfront.<small>We'd rather you came in than rang — but please call ahead for catering orders.</small></dd>
+    </dl>
+    <div class="actions">
+      <a href="https://maps.google.com/?q=205+Great+Horton+Road+Bradford+BD7+1RP" class="cta" target="_blank" rel="noopener">Open in Maps</a>
+      <a href="#counter" class="cta ghost">See the counter</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div>
+    <span class="stamp">Bradford · BD7 · Counter open</span>
+    <h4>Ambala</h4>
+    <p class="meta" style="max-width:34ch;font-style:italic">A mithai counter on Great Horton Road. Sweet by the box, savoury by the tray, tinned for the days that matter.</p>
+  </div>
+  <div>
+    <h5>Counter</h5>
+    <ul>
+      <li><a href="#counter">Mithai</a></li>
+      <li><a href="#counter">Savouries</a></li>
+      <li><a href="#counter">By the box</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Celebrations</h5>
+    <ul>
+      <li><a href="#celebrate">Weddings</a></li>
+      <li><a href="#celebrate">Diwali tins</a></li>
+      <li><a href="#celebrate">Catering</a></li>
+      <li><a href="#visit">Visit us</a></li>
+    </ul>
+  </div>
+  <div class="colophon">
+    <span>205 Great Horton Road · Bradford · BD7 1RP</span>
+    <span>Ambala Bradford · independent counter · sold by weight</span>
+  </div>
+</footer>
+
+</body>
+</html>
